@@ -19,6 +19,13 @@ run: build ## runs fava container
     -v ~/source/chaos-budget/importers:/importers \
     acbilson/fava-2.3.3:latest
 
+.PHONY: identify
+identify: ## runs bean-identify on my ingestion folder
+	docker run -it --rm \
+    -v ~/source/chaos-budget/data:/data \
+    -v ~/source/chaos-budget/importers:/importers \
+    acbilson/beancount-2.3.3:latest sh -c "bean-identify /importers/config.py /data"
+
 .PHONY: check
 check: ## runs bean-check for my default journal
 	docker run -it --rm -v ~/source/chaos-budget/journals:/journals acbilson/beancount-2.3.3:latest bean-check journal.beancount
