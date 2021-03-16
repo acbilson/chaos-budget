@@ -8,5 +8,5 @@ sys.path.append(os.path.dirname(__file__))
 from pncbank import PNCBankImporter
 
 CONFIG = [
-    PNCBankImporter('Assets:US:PNCBank:Checking'),
+    PNCBankImporter('Assets:US:PNCBank:Checking', '/importers/accounts.yaml'),
 ]

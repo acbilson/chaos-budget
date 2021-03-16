@@ -2,6 +2,7 @@
 import os
 import re
 import csv
+import yaml
 from dateutil.parser import parse
 from beancount.ingest import importer
 from beancount.core import amount
@@ -11,8 +12,9 @@ from beancount.core.number import D
 
 
 class PNCBankImporter(importer.ImporterProtocol):
-    def __init__(self, account):
+    def __init__(self, account, config_path):
         self.account = account
+        self.config_path = config_path
 
     def name(self):
         return('PNCBankImporter')
@@ -23,32 +25,78 @@ class PNCBankImporter(importer.ImporterProtocol):
         else:
             return False
 
-    def extract(self, fi):
-        entries = []
+    def _read_accounts_yaml(self):
+        with open(self.config_path, 'r') as c:
+            return yaml.safe_load(c)
 
-        with open(fi.name, 'r') as f:
+    def _parse_desc(self, accounts, value):
+        results = []
+        for bucket in accounts.keys():
+            for acct in accounts[bucket]:
+                for t in accounts[bucket][acct]:
+                    (desc, regex) = t.values()
+                    if re.search(regex, value):
+                        results.append((bucket+':'+acct, desc))
+        return results
+
+    def extract(self, path):
+        expenses = []
+        entries = []
+        accounts = []
+        strip_spaces = re.compile(r'\W+')
+
+        if os.path.isfile(self.config_path):
+            accounts = self._read_accounts_yaml()
+
+        with open(path.name, 'r') as f:
             for index, row in enumerate(csv.DictReader(f)):
                 # skips the header
                 if index == 0:
                     continue
+
                 meta = data.new_metadata(f.name, index)
                 trans_date = parse(row['Date']).date()
-                trans_desc = row['Description']
-                trans_amt = row['Withdrawals'] + row['Deposits']
+                trans_desc = strip_spaces.sub(' ', row['Description']).lower().strip()
+                trans_payee = ''
+                trans_narr = trans_desc
+
+                if row['Withdrawals'] != '':
+                    amt = row['Withdrawals'][1:]
+                    post_amt = amt
+                    sec_post_amt = '-' + amt
+                    post_acct = 'Expenses:Unknown'
+                else:
+                    amt = row['Deposits'][1:]
+                    post_amt = '-' + amt
+                    sec_post_amt = amt
+                    post_acct = 'Income:Unknown'
+
+                if len(accounts) > 0:
+                    accts = self._parse_desc(accounts, trans_desc)
+                    if len(accts) > 0:
+                      first, *rest = accts
+                      (post_acct, trans_payee) = first
+                      trans_narr = trans_desc + ''.join(rest)
 
                 txn = data.Transaction(
                     meta=meta,
                     date=trans_date,
                     flag=flags.FLAG_OKAY,
-                    payee=trans_desc,
-                    narration="",
+                    payee=trans_payee,
+                    narration=trans_narr,
                     tags=set(),
                     links=set(),
                     postings=[],
                 )
 
                 txn.postings.append(
-                    data.Posting(self.account, amount.Amount(D(trans_amt[1:]), 'USD'),
+                    data.Posting(post_acct, amount.Amount(D(post_amt), 'USD'),
+                        None, None, None, None
+                    )
+                )
+
+                txn.postings.append(
+                    data.Posting(self.account, amount.Amount(D(sec_post_amt), 'USD'),
                         None, None, None, None
                     )
                 )
