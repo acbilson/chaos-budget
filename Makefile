@@ -31,11 +31,20 @@ check: ## runs bean-check for my default journal
 	docker run -it --rm -v ~/source/chaos-budget/journals:/journals acbilson/beancount-2.3.3:latest bean-check journal.beancount
 
 .PHONY: import
-import: ## runs bean-extract to import all csv data
+import: ## runs bean-extract to import all csv data in the ./data folder
 	docker run -it --rm \
     -v ~/source/chaos-budget/data:/data \
     -v ~/source/chaos-budget/importers:/importers \
     acbilson/beancount-2.3.3:latest sh -c "bean-extract /importers/config.py /data > /data/import.beancount"
+
+.PHONY: reload
+reload: ## creates a new import file from all statements to-date
+	rm -f data/* && cp docs/checking/* data/ && cp docs/saving/* data/ && \
+	docker run -it --rm \
+    -v ~/source/chaos-budget/data:/data \
+    -v ~/source/chaos-budget/importers:/importers \
+    acbilson/beancount-2.3.3:latest sh -c "bean-extract /importers/config.py /data > /data/import.beancount"
+
 
 .PHONY: format
 format: ## runs bean-format on my default journal

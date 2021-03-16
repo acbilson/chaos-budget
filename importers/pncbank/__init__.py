@@ -19,11 +19,13 @@ class PNCBankImporter(importer.ImporterProtocol):
     def name(self):
         return "PNCBankImporter"
 
-    def identify(self, f):
-        if re.match("pnc.*\.csv", os.path.basename(f.name)):
-            return True
-        else:
-            return False
+    def identify(self, path):
+        if re.match("pnc.*\.csv", os.path.basename(path.name)):
+            with open(path.name, 'r') as f:
+                line = f.readline()
+                if line[:4] == 'Date':
+                    return True
+        return False
 
     def _read_accounts_yaml(self):
         with open(self.config_path, "r") as c:
@@ -122,11 +124,13 @@ class PNCBankStatementImporter(importer.ImporterProtocol):
     def name(self):
         return "PNCBankStatementImporter"
 
-    def identify(self, f):
-        if re.match("statement-pnc.*\.csv", os.path.basename(f.name)):
-            return True
-        else:
-            return False
+    def identify(self, path):
+        if re.match("pnc.*\.csv", os.path.basename(path.name)):
+            with open(path.name, 'r') as f:
+                line = f.readline()
+                if line[:4] == '0000':
+                    return True
+        return False
 
     def _read_accounts_yaml(self):
         with open(self.config_path, "r") as c:
