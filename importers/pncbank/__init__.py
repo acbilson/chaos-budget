@@ -85,10 +85,11 @@ class PNCBankImporter(importer.ImporterProtocol):
                         (post_acct, trans_payee) = first
                         trans_narr = trans_desc + "".join(rest)
 
+                # flags imported transactions with a warning '!' to let me know they need my review
                 txn = data.Transaction(
                     meta=meta,
                     date=trans_date,
-                    flag=flags.FLAG_OKAY,
+                    flag=flags.FLAG_WARNING,
                     payee=trans_payee,
                     narration=trans_narr,
                     tags=set(),
@@ -190,10 +191,11 @@ class PNCBankStatementImporter(importer.ImporterProtocol):
                         (post_acct, trans_payee) = first
                         trans_narr = trans_desc + "".join(rest)
 
+                # flags imported transactions with a warning '!' to let me know they need my review
                 txn = data.Transaction(
                     meta=meta,
                     date=trans_date,
-                    flag=flags.FLAG_OKAY,
+                    flag=flags.FLAG_WARNING,
                     payee=trans_payee,
                     narration=trans_narr,
                     tags=set(),
