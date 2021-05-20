@@ -14,6 +14,14 @@ Expenses:
     regex: "newport"
   - desc: "Brothers K"
     regex: "brothers k"
+  - desc: "Intelligentsia"
+    regex: "intelligentsia"
+  - desc: "Coffee Lab"
+    regex: "coffee lab"
+  - desc: "Bond Coffee"
+    regex: "bond coffee"
+  - desc: "Backlot Coffee"
+    regex: "backlot coffee"
   Food:Groceries:
   - desc: "Target"
     regex: "target"
@@ -38,6 +46,14 @@ Expenses:
     regex: "chipotle"
   - desc: "Chick-fil-a"
     regex: "chick fil a"
+  - desc: "Pita Inn"
+    regex: "pita inn"
+  - desc: "Cozy Noodles"
+    regex: "cozy noodles"
+  - desc: "Joy Yee"
+    regex: "joy yee"
+  - desc: "Hoosier Mama"
+    regex: "sq pie and coffee"
   Personal:Hair:
   - desc: "Ergo Salon"
     regex: "ergo salon"
@@ -83,6 +99,9 @@ Expenses:
   Home:Mortgage:
   - desc: "PennyMac Mortgage"
     regex: "pennymac"
+  Entertainment:Movie:
+  - desc: "Amazon Prime"
+    regex: "prime video"
 Income:
   US:KeyBank:Transfer:
   - desc: "KeyBank Transfer"
