@@ -1,6 +1,3 @@
 __pycache__/
-budgets/
-docs/
-data/
-journals/
+import/
 .vscode/
