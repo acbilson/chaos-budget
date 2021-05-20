@@ -1,5 +1,8 @@
 ---
 Expenses:
+  Clothing:Children:
+  - desc: "Nordstrom"
+    regex: "nordrack"
   Food:Coffee:
   - desc: "Philz Coffee"
     regex: "philz"
@@ -25,12 +28,25 @@ Expenses:
     regex: "panera"
   - desc: "Peckish Pig"
     regex: "peckish pig"
+  - desc: "Potbelly"
+    regex: "potbelly"
+  - desc: "Culvers"
+    regex: "culvers"
+  - desc: "Shake Shack"
+    regex: "shake shack"
+  - desc: "Chipotle"
+    regex: "chipotle"
+  - desc: "Chick-fil-a"
+    regex: "chick fil a"
+  Personal:Hair:
+  - desc: "Ergo Salon"
+    regex: "ergo salon"
   Subscriptions:Netflix:
   - desc: "Netflix"
     regex: "netflix"
   Subscriptions:OneDrive:
   - desc: "OneDrive"
-    regex: "onedrive"
+    regex: "microsoft"
   Subscriptions:1Password:
   - desc: "1Password"
     regex: "applecombill"
@@ -47,9 +63,14 @@ Expenses:
   Medical:Chiropractor:
   - desc: "Evolution"
     regex: "evolution spine"
+  Transport:Insurance:
+  - desc: "USAA"
+    regex: "usaa"
   Transport:Gas:
   - desc: "Shell"
     regex: "shell"
+  - desc: "BP"
+    regex: "bp "
   Utilities:Electricity:
   - desc: "Commonwealth Edison"
     regex: "commonweath ed"
@@ -57,7 +78,7 @@ Expenses:
   - desc: "AT&T"
     regex: "t mobility"
   Utilities:Internet:
-  - desc: "rcn"
+  - desc: "RCN"
     regex: "rcn"
   Home:Mortgage:
   - desc: "PennyMac Mortgage"
@@ -69,3 +90,9 @@ Income:
   US:PTCP:Paycheck:
   - desc: "Performance Trust Paycheck"
     regex: "performance dir"
+  US:PNCBank:Interest:
+  - desc: "PNC Bank"
+    regex: "interest payment"
+  US:VA:Disability:
+  - desc: "Veterans Affairs"
+    regex: "vacp treas"
