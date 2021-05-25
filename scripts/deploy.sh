@@ -10,7 +10,7 @@ uat)
   ssh -t ${UAT_HOST} \
     sudo podman run --rm -d \
       --expose ${UAT_EXPOSED_PORT} -p ${UAT_EXPOSED_PORT}:5000 \
-      -v ${PRD_CONTENT_PATH}/chaos-content:/importers \
+      -v ${PRD_CONTENT_PATH}/journals:/journals \
       --name budget-uat \
       acbilson/budget-uat:buster-slim
 ;;

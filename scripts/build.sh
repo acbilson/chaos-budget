@@ -21,7 +21,7 @@ uat)
   mkdir -p dist/dist && cp Dockerfile dist/ && cp template/requirements.txt dist/dist/
 
   echo "copies importers to distribute..."
-  cp -r importers dist/
+  cp -r importers dist/dist/
 
   echo "distributes dist/ folder..."
   scp -r dist ${UAT_HOST}:/mnt/msata/build/uat
@@ -37,14 +37,16 @@ uat)
 
 prod)
   echo "creates files from template..."
-  mkdir -p dist && \
+  mkdir -p dist/dist && \
+    cp Dockerfile dist/ && \
+    cp template/requirements.txt dist/dist/ && \
     envsubst < template/container-budget.service > dist/container-budget.service
 
   echo "copies files to distribute..."
   cp Dockerfile dist/
 
   echo "copies importers to distribute..."
-  cp -r importers dist/
+  cp -r importers dist/dist/
 
   echo "distributes dist/ folder..."
   scp -r dist ${PROD_HOST}:/mnt/msata/build/prod
