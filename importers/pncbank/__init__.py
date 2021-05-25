@@ -11,6 +11,11 @@ from beancount.core import flags
 from beancount.core.number import D
 
 
+# Two types of statements are available via the PNC Bank website, hence the two parsers. The type is determined from the header line.
+#
+# The first is a recent export which has a little more data but doesn't go back more than six months?
+# The other is a long-term export which has less data but goes back all the way to account creation.
+
 class PNCBankImporter(importer.ImporterProtocol):
     def __init__(self, account, config_path):
         self.account = account
@@ -80,10 +85,11 @@ class PNCBankImporter(importer.ImporterProtocol):
                         (post_acct, trans_payee) = first
                         trans_narr = trans_desc + "".join(rest)
 
+                # flags imported transactions with a warning '!' to let me know they need my review
                 txn = data.Transaction(
                     meta=meta,
                     date=trans_date,
-                    flag=flags.FLAG_OKAY,
+                    flag=flags.FLAG_WARNING,
                     payee=trans_payee,
                     narration=trans_narr,
                     tags=set(),
@@ -185,10 +191,11 @@ class PNCBankStatementImporter(importer.ImporterProtocol):
                         (post_acct, trans_payee) = first
                         trans_narr = trans_desc + "".join(rest)
 
+                # flags imported transactions with a warning '!' to let me know they need my review
                 txn = data.Transaction(
                     meta=meta,
                     date=trans_date,
-                    flag=flags.FLAG_OKAY,
+                    flag=flags.FLAG_WARNING,
                     payee=trans_payee,
                     narration=trans_narr,
                     tags=set(),

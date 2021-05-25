@@ -1,5 +1,10 @@
 ---
 Expenses:
+  Clothing:Children:
+  - desc: "Nordstrom"
+    regex: "nordrack"
+  - desc: "Mercari"
+    regex: "mercari"
   Food:Coffee:
   - desc: "Philz Coffee"
     regex: "philz"
@@ -11,6 +16,14 @@ Expenses:
     regex: "newport"
   - desc: "Brothers K"
     regex: "brothers k"
+  - desc: "Intelligentsia"
+    regex: "intelligentsia"
+  - desc: "Coffee Lab"
+    regex: "coffee lab"
+  - desc: "Bond Coffee"
+    regex: "bond coffee"
+  - desc: "Backlot Coffee"
+    regex: "backlot coffee"
   Food:Groceries:
   - desc: "Target"
     regex: "target"
@@ -20,17 +33,46 @@ Expenses:
     regex: "jd mills"
   - desc: "Jewel-Osco"
     regex: "jewel osco"
+  - desc: "Binny's Beverage Depot"
+    regex: "binnys beverage"
   Food:Restaurant:
   - desc: "Panera"
     regex: "panera"
   - desc: "Peckish Pig"
     regex: "peckish pig"
+  - desc: "Potbelly"
+    regex: "potbelly"
+  - desc: "Culvers"
+    regex: "culvers"
+  - desc: "Shake Shack"
+    regex: "shake shack"
+  - desc: "Chipotle"
+    regex: "chipotle"
+  - desc: "Chick-fil-a"
+    regex: "chick fil a"
+  - desc: "Pita Inn"
+    regex: "pita inn"
+  - desc: "Cozy Noodles"
+    regex: "cozy noodles"
+  - desc: "Joy Yee"
+    regex: "joy yee"
+  - desc: "Hoosier Mama"
+    regex: "sq pie and coffee"
+  - desc: "Bennison's Bakery"
+    regex: "bennison"
+  - desc: "Firehouse Grill"
+    regex: "firehouse grill"
+  - desc: "Jet's Pizza"
+    regex: "jets pizza"
+  Personal:Hair:
+  - desc: "Ergo Salon"
+    regex: "ergo salon"
   Subscriptions:Netflix:
   - desc: "Netflix"
     regex: "netflix"
   Subscriptions:OneDrive:
   - desc: "OneDrive"
-    regex: "onedrive"
+    regex: "microsoft"
   Subscriptions:1Password:
   - desc: "1Password"
     regex: "applecombill"
@@ -47,9 +89,14 @@ Expenses:
   Medical:Chiropractor:
   - desc: "Evolution"
     regex: "evolution spine"
+  Transport:Insurance:
+  - desc: "USAA"
+    regex: "usaa"
   Transport:Gas:
   - desc: "Shell"
     regex: "shell"
+  - desc: "BP"
+    regex: "bp "
   Utilities:Electricity:
   - desc: "Commonwealth Edison"
     regex: "commonweath ed"
@@ -57,11 +104,14 @@ Expenses:
   - desc: "AT&T"
     regex: "t mobility"
   Utilities:Internet:
-  - desc: "rcn"
+  - desc: "RCN"
     regex: "rcn"
   Home:Mortgage:
   - desc: "PennyMac Mortgage"
     regex: "pennymac"
+  Entertainment:Movie:
+  - desc: "Amazon Prime"
+    regex: "prime video"
 Income:
   US:KeyBank:Transfer:
   - desc: "KeyBank Transfer"
@@ -69,3 +119,9 @@ Income:
   US:PTCP:Paycheck:
   - desc: "Performance Trust Paycheck"
     regex: "performance dir"
+  US:PNCBank:Interest:
+  - desc: "PNC Bank"
+    regex: "interest payment"
+  US:VA:Disability:
+  - desc: "Veterans Affairs"
+    regex: "vacp treas"
