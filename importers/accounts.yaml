@@ -3,6 +3,8 @@ Expenses:
   Clothing:Children:
   - desc: "Nordstrom"
     regex: "nordrack"
+  - desc: "Mercari"
+    regex: "mercari"
   Food:Coffee:
   - desc: "Philz Coffee"
     regex: "philz"
@@ -31,6 +33,8 @@ Expenses:
     regex: "jd mills"
   - desc: "Jewel-Osco"
     regex: "jewel osco"
+  - desc: "Binny's Beverage Depot"
+    regex: "binnys beverage"
   Food:Restaurant:
   - desc: "Panera"
     regex: "panera"
@@ -54,6 +58,12 @@ Expenses:
     regex: "joy yee"
   - desc: "Hoosier Mama"
     regex: "sq pie and coffee"
+  - desc: "Bennison's Bakery"
+    regex: "bennison"
+  - desc: "Firehouse Grill"
+    regex: "firehouse grill"
+  - desc: "Jet's Pizza"
+    regex: "jets pizza"
   Personal:Hair:
   - desc: "Ergo Salon"
     regex: "ergo salon"
