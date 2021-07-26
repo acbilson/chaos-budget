@@ -25,6 +25,8 @@ Expenses:
   - desc: "Backlot Coffee"
     regex: "backlot coffee"
   Food:Groceries:
+  - desc: "Wine Goddess"
+    regex: "wine goddess"
   - desc: "Target"
     regex: "target"
   - desc: "Trader Joes"
@@ -36,6 +38,8 @@ Expenses:
   - desc: "Binny's Beverage Depot"
     regex: "binnys beverage"
   Food:Restaurant:
+  - desc: "Giordano's"
+    regex: "giordano"
   - desc: "Panera"
     regex: "panera"
   - desc: "Peckish Pig"
@@ -64,6 +68,10 @@ Expenses:
     regex: "firehouse grill"
   - desc: "Jet's Pizza"
     regex: "jets pizza"
+  - desc: "Blaze Pizza"
+    regex: "blaze pizza"
+  - desc: "Giordano's"
+    regex: "giordano"
   Personal:Hair:
   - desc: "Ergo Salon"
     regex: "ergo salon"
@@ -87,7 +95,7 @@ Expenses:
   - desc: "Amazon.com"
     regex: "amzn digital"
   Medical:Chiropractor:
-  - desc: "Evolution"
+  - desc: "Evolution Spine"
     regex: "evolution spine"
   Transport:Insurance:
   - desc: "USAA"
@@ -97,6 +105,8 @@ Expenses:
     regex: "shell"
   - desc: "BP"
     regex: "bp "
+  - desc: "Exxon Mobile"
+    regex: "exxonmobil"
   Utilities:Electricity:
   - desc: "Commonwealth Edison"
     regex: "commonweath ed"
@@ -112,12 +122,15 @@ Expenses:
   Entertainment:Movie:
   - desc: "Amazon Prime"
     regex: "prime video"
+  Home:Household:
+  - desc: "Dollar Shave Club"
+    regex: "dollarshaveclub"
 Income:
   US:KeyBank:Transfer:
   - desc: "KeyBank Transfer"
     regex: "keybank"
   US:PTCP:Paycheck:
-  - desc: "Performance Trust Paycheck"
+  - desc: "Performance Trust"
     regex: "performance dir"
   US:PNCBank:Interest:
   - desc: "PNC Bank"
