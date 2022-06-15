@@ -14,14 +14,14 @@ RUN apt-get update && apt-get upgrade -y && \
       git
 
 # Installs python packages to the users local folder
-COPY dist/requirements.txt .
+COPY template/requirements.txt .
 RUN pip install --user -r requirements.txt
 
 FROM python:3.9.2-slim-buster AS base
 COPY --from=build /root/.local /root/.local
 
 # Adds importers
-COPY dist/importers /importers
+COPY importers /importers
 
 #############
 # Development
