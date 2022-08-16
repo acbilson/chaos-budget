@@ -1,4 +1,4 @@
-FROM python:3.9.2-slim-buster
+FROM python:3.10.6-slim-bullseye
 ENV BEANCOUNT_VERSION "2.3.3"
 WORKDIR /src
 
@@ -14,7 +14,7 @@ RUN apt-get update && apt-get upgrade -y && \
       git
 
 # Installs python packages to the users local folder
-COPY template/requirements.txt .
+COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 # Adds importers
