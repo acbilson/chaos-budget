@@ -1,8 +1,7 @@
 ########
 # Global
 ########
-set -a # exports vars - docker needs no export, but bash scripts do
-
+#
 # remote hosts
 # I use an ssh config file to specify the user/ip combination
 # for ssh interaction. These are hosts specified in ~/.ssh/config
@@ -14,8 +13,8 @@ UAT_HOST=web
 ######################
 
 # The port exposed by the service.
-UAT_EXPOSED_PORT=3001
-EXPOSED_PORT=3000
+UAT_EXPOSED_PORT=5001
+EXPOSED_PORT=5000
 
 # The public-facing url. May be routed behind a proxy. Must match OAuth redirect.
 DEV_SITE=http://localhost:${EXPOSED_PORT}
