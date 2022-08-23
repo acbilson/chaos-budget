@@ -6,6 +6,12 @@ Expenses:
   - desc: "Mercari"
     regex: "mercari"
   Food:Coffee:
+  - desc: "Black Hills Blend"
+    regex: "black hills blend"
+  - desc: "Dixon Coffee"
+    regex: "dixon coff"
+  - desc: "Dunn Brothers"
+    regex: "dunn broth"
   - desc: "Philz Coffee"
     regex: "philz"
   - desc: "Starbucks"
@@ -25,6 +31,8 @@ Expenses:
   - desc: "Backlot Coffee"
     regex: "backlot coffee"
   Food:Groceries:
+  - desc: "Safeway"
+    regex: "safeway 15"
   - desc: "Wine Goddess"
     regex: "wine goddess"
   - desc: "Target"
@@ -38,6 +46,12 @@ Expenses:
   - desc: "Binny's Beverage Depot"
     regex: "binnys beverage"
   Food:Restaurant:
+  - desc: "Colonial House"
+    regex: "colonial house"
+  - desc: "Sonic Drive-In"
+    regex: "sonic drive"
+  - desc: "Black Hills Bagels"
+    regex: "black hills bag"
   - desc: "Giordano's"
     regex: "giordano"
   - desc: "Panera"
@@ -101,6 +115,8 @@ Expenses:
   - desc: "USAA"
     regex: "usaa"
   Transport:Gas:
+  - desc: "Safeway"
+    regex: "safeway fuel"
   - desc: "Shell"
     regex: "shell"
   - desc: "BP"
@@ -125,7 +141,14 @@ Expenses:
   Home:Household:
   - desc: "Dollar Shave Club"
     regex: "dollarshaveclub"
+  - desc: "Knecht"
+    regex: "knecht"
+  - desc: "Ace Hardware"
+    regex: "ace hardw"
 Income:
+  US:PTCP:Paycheck:
+  - desc: "Performance Trust"
+    regex: "dir dep.*performance"
   US:KeyBank:Transfer:
   - desc: "KeyBank Transfer"
     regex: "keybank"
