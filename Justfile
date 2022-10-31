@@ -3,14 +3,14 @@ set dotenv-load
 ## builds a production docker image
 build:
 	COMMIT_ID=$(git rev-parse --short HEAD); \
-	docker build \
+	podman build \
 	--build-arg EXPOSED_PORT=${EXPOSED_PORT} \
 	-t acbilson/budget:latest \
 	-t acbilson/budget:${COMMIT_ID} .
 
 ## starts a production docker image
 start:
-	docker run \
+	podman run \
 	-it --rm \
 	--expose ${EXPOSED_PORT} \
 	-p ${EXPOSED_PORT}:5000 \
@@ -43,3 +43,8 @@ format:
 	acbilson/budget:latest \
 	sh -c "bean-format journal.beancount > journal-formatted.beancount"
 
+# launches a tmux session
+develop:
+	tmux new-session -s budget -n service -d 'just start';
+	tmux new-window -t budget:1 -n edit 'nvim ~/source/chaos-budget-content/ledgers/ledgers.beancount'
+	tmux attach

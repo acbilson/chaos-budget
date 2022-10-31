@@ -6,6 +6,10 @@ Expenses:
   - desc: "Mercari"
     regex: "mercari"
   Food:Coffee:
+  - desc: "Essence of Coffee"
+    regex: "essence of coff"
+  - desc: "Koyote Koffee"
+    regex: "koyote koffee"
   - desc: "Black Hills Blend"
     regex: "black hills blend"
   - desc: "Dixon Coffee"
@@ -31,12 +35,12 @@ Expenses:
   - desc: "Backlot Coffee"
     regex: "backlot coffee"
   Food:Groceries:
+  - desc: "Family Fare"
+    regex: "family fare"
   - desc: "Safeway"
     regex: "safeway 15"
   - desc: "Wine Goddess"
     regex: "wine goddess"
-  - desc: "Target"
-    regex: "target"
   - desc: "Trader Joes"
     regex: "trader joe"
   - desc: "J.D. Mills"
@@ -46,6 +50,16 @@ Expenses:
   - desc: "Binny's Beverage Depot"
     regex: "binnys beverage"
   Food:Restaurant:
+  - desc: "McDonald's"
+    regex: "mcdonalds"
+  - desc: "Armadillos Ice Cream"
+    regex: "armadillos ice"
+  - desc: "Everest Cuisine"
+    regex: "everest cuisine"
+  - desc: "Noodles & Company"
+    regex: "noodles co"
+  - desc: "Taco Johns"
+    regex: "taco john"
   - desc: "Colonial House"
     regex: "colonial house"
   - desc: "Sonic Drive-In"
@@ -108,6 +122,9 @@ Expenses:
     regex: "amazon"
   - desc: "Amazon.com"
     regex: "amzn digital"
+  Medical:Drugs:
+  - desc: "Walgreens"
+    regex: "walgreens"
   Medical:Chiropractor:
   - desc: "Evolution Spine"
     regex: "evolution spine"
@@ -123,6 +140,9 @@ Expenses:
     regex: "bp "
   - desc: "Exxon Mobile"
     regex: "exxonmobil"
+  Utilities:Water:
+  - desc: "Black Hills Utilities"
+    regex: "black hills util"
   Utilities:Electricity:
   - desc: "Commonwealth Edison"
     regex: "commonweath ed"
@@ -130,6 +150,8 @@ Expenses:
   - desc: "AT&T"
     regex: "t mobility"
   Utilities:Internet:
+  - desc: "Midco"
+    regex: "midcontinent"
   - desc: "RCN"
     regex: "rcn"
   Home:Mortgage:
@@ -139,6 +161,16 @@ Expenses:
   - desc: "Amazon Prime"
     regex: "prime video"
   Home:Household:
+  - desc: "Target"
+    regex: "target"
+  - desc: "Lowe's"
+    regex: "lowe s"
+  - desc: "Sherwin Williams"
+    regex: "sherwin willia"
+  - desc: "Ace Hardware"
+    regex: "rapid city hardw"
+  - desc: "Menard's"
+    regex: "mnrd rapid"
   - desc: "Dollar Shave Club"
     regex: "dollarshaveclub"
   - desc: "Knecht"
