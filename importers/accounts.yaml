@@ -1,11 +1,22 @@
 ---
 Expenses:
+  School:ChildHouse:
+  - desc: "Children's House"
+    regex: "pb childre"
+  Gift:Children:
+  - desc: "Run Wild"
+    regex: "run wild sum"
+  Gift:Neighbor:
+  - desc: "Patreon"
+    regex: "patreon"
   Clothing:Children:
   - desc: "Nordstrom"
     regex: "nordrack"
   - desc: "Mercari"
     regex: "mercari"
   Food:Coffee:
+  - desc: "Pure Bean"
+    regex: "pure bean coff"
   - desc: "Essence of Coffee"
     regex: "essence of coff"
   - desc: "Koyote Koffee"
@@ -35,6 +46,10 @@ Expenses:
   - desc: "Backlot Coffee"
     regex: "backlot coffee"
   Food:Groceries:
+  - desc: "Breadroot"
+    regex: "breadroot coop"
+  - desc: "Walmart"
+    regex: "wm supercenter"
   - desc: "Family Fare"
     regex: "family fare"
   - desc: "Safeway"
@@ -50,14 +65,20 @@ Expenses:
   - desc: "Binny's Beverage Depot"
     regex: "binnys beverage"
   Food:Restaurant:
+  - desc: "Harriet & Oak"
+    regex: "harriet amp oak"
+  - desc: "Qdoba"
+    regex: "qdoba"
   - desc: "McDonald's"
-    regex: "mcdonalds"
+    regex: "mcdonald"
   - desc: "Armadillos Ice Cream"
     regex: "armadillos ice"
   - desc: "Everest Cuisine"
     regex: "everest cuisine"
   - desc: "Noodles & Company"
     regex: "noodles co"
+  - desc: "Noodles & Company"
+    regex: "noodles amp co"
   - desc: "Taco Johns"
     regex: "taco john"
   - desc: "Colonial House"
@@ -128,10 +149,15 @@ Expenses:
   Medical:Chiropractor:
   - desc: "Evolution Spine"
     regex: "evolution spine"
+  Transport:Parking:
+  - desc: "Rapid City Parking"
+    regex: "rapid city parking"
   Transport:Insurance:
   - desc: "USAA"
     regex: "usaa"
   Transport:Gas:
+  - desc: "Big D"
+    regex: "big d 24"
   - desc: "Safeway"
     regex: "safeway fuel"
   - desc: "Shell"
@@ -193,3 +219,5 @@ Income:
   US:VA:Disability:
   - desc: "Veterans Affairs"
     regex: "vacp treas"
+  - desc: "Veterans Affairs"
+    regex: "xxva benef"
