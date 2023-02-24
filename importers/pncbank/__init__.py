@@ -21,6 +21,9 @@ class PNCBankImporter(importer.ImporterProtocol):
         self.account = account
         self.config_path = config_path
 
+    def file_account(self, _):
+        return self.account
+
     def name(self):
         return "PNCBankImporter"
 
@@ -129,6 +132,9 @@ class PNCBankStatementImporter(importer.ImporterProtocol):
 
     def name(self):
         return "PNCBankStatementImporter"
+
+    def file_account(self, _):
+        return self.account
 
     def identify(self, path):
         if re.match("pnc.*\.csv", os.path.basename(path.name)):
