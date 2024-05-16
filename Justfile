@@ -10,8 +10,8 @@ build:
 
 ## starts a production docker image
 start:
-	podman run \
-	-it --rm \
+	podman run -d \
+	--rm \
 	--expose ${EXPOSED_PORT} \
 	-p ${EXPOSED_PORT}:5000 \
 	-v ${CONTENT_PATH}/journals:/journals \
@@ -23,22 +23,22 @@ start:
 
 ## runs bean-identify to check my importers
 identify:
-	docker run -it --rm \
-	-v ~/source/chaos-budget/data:/data \
+	podman run -it --rm \
+	-v ~/source/chaos-budget/import:/data \
 	-v ~/source/chaos-budget/importers:/importers \
-	acbilson/budget:latest
+	acbilson/budget:latest \
 	sh -c "bean-identify /importers/config.py /data"
 
 ## runs bean-check for my default journal
 check:
-	docker run -it --rm \
+	podman run -it --rm \
 	-v ~/source/chaos-budget-content/journals:/journals \
 	acbilson/budget:latest \
-	bean-check journal.beancount
+	sh -c "bean-check journal.beancount"
 
 ## runs bean-format on my default journal
 format:
-	docker run -it --rm \
+	podman run -it --rm \
 	-v ~/source/chaos-budget-content/journals:/journals \
 	acbilson/budget:latest \
 	sh -c "bean-format journal.beancount > journal-formatted.beancount"
