@@ -1,6 +1,6 @@
 set dotenv-load
 
-## builds a production docker image
+## builds a production podman image
 build:
 	COMMIT_ID=$(git rev-parse --short HEAD); \
 	podman build \
@@ -8,7 +8,7 @@ build:
 	-t acbilson/budget:latest \
 	-t acbilson/budget:${COMMIT_ID} .
 
-## starts a production docker image
+## starts a production podman image
 start:
 	podman run -d \
 	--rm \
